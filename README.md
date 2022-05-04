@@ -1,1 +1,1 @@
-# ISIS1225-SampleGraph
+Joseph Steven Linares Gutierrez - js.linares@uniandes.edu.co - 202111887

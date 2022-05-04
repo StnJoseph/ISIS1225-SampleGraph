@@ -23,7 +23,7 @@
  * Dario Correal
  *
  """
-
+import time
 import config as cf
 from App import model
 import csv
@@ -134,3 +134,16 @@ def servedRoutes(analyzer):
     """
     maxvert, maxdeg = model.servedRoutes(analyzer)
     return maxvert, maxdeg
+
+def getTime():
+    """
+    devuelve el instante tiempo de procesamiento en milisegundos
+    """
+    return float(time.perf_counter()*1000)
+
+def deltaTime(end, start):
+    """
+    devuelve la diferencia entre tiempos de procesamiento muestreados
+    """
+    elapsed = float(end - start)
+    return elapsed

@@ -31,6 +31,8 @@ import threading
 from App import controller
 from DISClib.ADT import stack
 assert config
+import tracemalloc
+
 
 """
 La vista se encarga de la interacción con el usuario.
@@ -83,7 +85,17 @@ def optionThree(cont):
 
 
 def optionFour(cont, initialStation):
+    #-----------------------------#
+    tracemalloc.start()
+    Tstart = controller.getTime()
+    #-----------------------------#
     controller.minimumCostPaths(cont, initialStation)
+    #-----------------------------#
+    Tend = controller.getTime()
+    tracemalloc.stop()
+    Time = controller.deltaTime(Tend, Tstart)
+    #-----------------------------#
+    print("Tiempo de ejecución: "+str(Time))
 
 
 def optionFive(cont, destStation):
